@@ -23,7 +23,8 @@ import java.util.List;
 public class Discord extends ListenerAdapter {
     @SneakyThrows
     public void initialize() {
-        JDABuilder.createLight("OTE1MDU5MzkwODEyNDAxNjg1.YaWFdw.tgHiGvYC_5-9pnwM1I9pPcHNaRQ", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
+        // Obtain your discord token from https://discord.com/developers
+        JDABuilder.createLight("discord bot token here", GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
                 .addEventListeners(new Discord())
                 .setActivity(Activity.playing("with the Lunar websocket"))
                 .build();
@@ -38,7 +39,7 @@ public class Discord extends ListenerAdapter {
             msg.reply("**" + WebServer.getInstance().getPlayerManager().getTotalOnline() + "** users currently online.").queue();
         }
 
-        if (!msg.getMember().getRoles().contains(msg.getGuild().getRoleById("916455992705835018"))) return;
+        if (!msg.getMember().getRoles().contains(msg.getGuild().getRoleById("change to your role id here"))) return;
 
         if (msg.getContentRaw().startsWith("l!announce")) {
             String[] args = msg.getContentRaw().split(" ");
