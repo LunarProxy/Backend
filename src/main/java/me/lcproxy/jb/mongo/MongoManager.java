@@ -15,8 +15,9 @@ public class MongoManager {
 
     @SneakyThrows
     public MongoManager() {
+        // Obtain a free mongodb from clever-cloud
         MongoClientURI uri = new MongoClientURI(
-                "mongodb+srv://amonger:oP4RN5eKsBqy6dP9MTA54XS89sM7Tgrj@cluster0.xetr3.mongodb.net/LCProxy?retryWrites=true&w=majority");
+                "mongoURI here");
         this.client = new MongoClient(uri);
 
         try {
